@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ListView
+            android:id="@id/android:list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ListView>
+        <TextView
+            android:id="@id/android:empty"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:text="你还未留下足迹，遇见自己，从今天开始~~"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/add"
+
+            android:id="@+id/diary_add" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:id="@+id/MusicName"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/MusicStatus"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal">
+
+            <!--显示当前进度-->
+            <TextView
+                android:id="@+id/MusicTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00" />
+
+            <SeekBar
+                android:layout_width="230sp"
+                android:layout_height="wrap_content"
+                android:id="@+id/MusicSeekBar"
+                android:layout_weight="1"
+                android:max="100"
+                android:layout_toRightOf="@+id/MusicTime"/>
+
+            <!--显示总进度-->
+            <TextView
+                android:id="@+id/MusicTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:layout_toRightOf="@+id/MusicSeekBar"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/BtnPlayorPause"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="35dp"
+                android:background="@drawable/start" />
+
+            <Button
+                android:id="@+id/BtnNext"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:background="@drawable/next"
+                android:layout_marginRight="35dp" />
+
+            <Button
+                android:id="@+id/BtnQuit"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:background="@drawable/quit" />
+        </LinearLayout>
+    </LinearLayout>
+    
+
+</LinearLayout>

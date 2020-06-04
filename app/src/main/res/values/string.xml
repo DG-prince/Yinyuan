@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">MyDiary01</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add">添加一篇新日记</string>
+    <string name="delete">删除</string>
+    <string name="title">标题</string>
+    <string name="content">内容</string>
+    <string name="save">保存日记</string>
+    <string name="title_activity_diary">DiaryActivity</string>
+    <string name="info">你确定要删除这篇日记吗？</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="save_success">日志保存成功！</string>
+    <string name="update_success">日志修改成功！</string>
+
+</resources>
+
+

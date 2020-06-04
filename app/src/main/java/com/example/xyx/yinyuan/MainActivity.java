@@ -6,14 +6,17 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Button enterBtn;
     private MediaPlayer mediaPlayer;
+    private long exitTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,25 @@ public class MainActivity extends AppCompatActivity {
                 builder.show();
             }
         });
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
-
+    public void exit() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            mediaPlayer.stop();
+            finish();
+            System.exit(0);
+        }
     }
 }

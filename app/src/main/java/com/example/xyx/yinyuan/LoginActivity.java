@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.telephony.CellIdentityCdma;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity{
     private EditText passwordEdit;//密码输入框
     private CheckBox savePassword;//是否保存密码复选框
     private CheckBox showPassword;//显示或隐藏密码复选框
+    private long exitTime = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,6 +137,25 @@ public class LoginActivity extends AppCompatActivity{
             passwordEdit.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
         passwordEdit.setSelection(pos);
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    public void exit() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次返回主界面",
+                    Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+            System.exit(0);
+        }
     }
 
 }

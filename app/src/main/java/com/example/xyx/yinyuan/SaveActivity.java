@@ -50,6 +50,7 @@ public class SaveActivity extends Activity {
                     Intent intent=new Intent();
                     intent.setClass(SaveActivity.this, DiaryActivity.class);
                     startActivity(intent);
+                    finish();
                     Toast.makeText(SaveActivity.this, R.string.save_success,
                             Toast.LENGTH_LONG).show();
                 }
@@ -79,6 +80,7 @@ public class SaveActivity extends Activity {
                     diaryService.update(diary);
                     Intent intent = new Intent(SaveActivity.this,DiaryActivity.class);
                     startActivity(intent);
+                    finish();
                     Toast.makeText(SaveActivity.this, R.string.update_success,
                             Toast.LENGTH_LONG).show();
                 }
@@ -105,6 +107,7 @@ public class SaveActivity extends Activity {
                                 //refreshList();
                                 Intent intent = new Intent(SaveActivity.this,DiaryActivity.class);
                                 startActivity(intent);
+                                finish();
                                 Toast.makeText(SaveActivity.this, "日记删除成功！",
                                         Toast.LENGTH_LONG).show();
                             }

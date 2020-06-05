@@ -153,6 +153,8 @@ public class LoginActivity extends AppCompatActivity{
                     Toast.LENGTH_SHORT).show();
             exitTime = System.currentTimeMillis();
         } else {
+            Intent intent = new Intent(LoginActivity.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             finish();
             System.exit(0);
         }
